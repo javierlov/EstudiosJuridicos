@@ -1,0 +1,67 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 598
+  Width = 919
+  object SQLConnection1: TSQLConnection
+    ConnectionName = 'MSSQLCONNECTION'
+    DriverName = 'MySQL'
+    GetDriverFunc = 'getSQLDriverMYSQL'
+    LibraryName = 'dbxmys.dll'
+    LoginPrompt = False
+    Params.Strings = (
+      'HostName=localhost'
+      'Database=bd'
+      'User_Name=root'
+      'Password=1234')
+    VendorLib = 'libmysql.dll'
+    Connected = True
+    Left = 40
+    Top = 24
+  end
+  object SQLMonitor1: TSQLMonitor
+    AutoSave = True
+    FileName = 'MONITOR.TXT'
+    SQLConnection = SQLConnection1
+    Left = 40
+    Top = 88
+  end
+  object SQLQuery1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'PCOD'
+        ParamType = ptInput
+        Value = '0'
+      end>
+    SQL.Strings = (
+      'SELECT * FROM CLIENTES'
+      'WHERE CODIGO=:PCOD')
+    SQLConnection = SQLConnection1
+    Left = 120
+    Top = 88
+    object SQLQuery1codigo: TIntegerField
+      FieldName = 'codigo'
+      Required = True
+    end
+    object SQLQuery1nombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 50
+    end
+    object SQLQuery1cedula: TStringField
+      FieldName = 'cedula'
+      Required = True
+    end
+    object SQLQuery1direccion: TStringField
+      FieldName = 'direccion'
+      Required = True
+      Size = 50
+    end
+  end
+  object DataSetProvider1: TDataSetProvider
+    DataSet = SQLQuery1
+    Left = 224
+    Top = 88
+  end
+end

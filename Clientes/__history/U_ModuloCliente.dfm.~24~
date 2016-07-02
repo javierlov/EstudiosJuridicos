@@ -1,0 +1,126 @@
+object Modulo: TModulo
+  OldCreateOrder = False
+  Height = 520
+  Width = 735
+  object DSProviderConnection1: TDSProviderConnection
+    ServerClassName = 'TDSServerModule1'
+    Connected = True
+    SQLConnection = SQLConnection1
+    Left = 184
+    Top = 24
+  end
+  object SQLConnection1: TSQLConnection
+    DriverName = 'Datasnap'
+    LoginPrompt = False
+    Connected = True
+    Left = 56
+    Top = 24
+  end
+  object Clientes: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProvider1'
+    RemoteServer = DSProviderConnection1
+    Left = 176
+    Top = 120
+    object Clientescodigo: TIntegerField
+      FieldName = 'codigo'
+    end
+    object Clientesnombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 50
+    end
+    object Clientescedula: TStringField
+      FieldName = 'cedula'
+      Required = True
+    end
+    object Clientesdireccion: TStringField
+      FieldName = 'direccion'
+      Required = True
+      Size = 50
+    end
+  end
+  object DTClientes: TDataSource
+    DataSet = Clientes
+    Left = 64
+    Top = 120
+  end
+  object DataSMaestro: TDataSource
+    DataSet = Maestro
+    Left = 288
+    Top = 200
+  end
+  object Maestro: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'cod'
+        ParamType = ptInput
+        Value = 0
+      end>
+    ProviderName = 'Proveedor'
+    RemoteServer = DSProviderConnection1
+    Left = 168
+    Top = 200
+    object Maestrocodigo: TIntegerField
+      FieldName = 'codigo'
+      Required = True
+    end
+    object Maestronombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 50
+    end
+    object Maestrocedula: TStringField
+      FieldName = 'cedula'
+      Required = True
+    end
+    object Maestrodireccion: TStringField
+      FieldName = 'direccion'
+      Required = True
+      Size = 50
+    end
+    object MaestroDetalle: TDataSetField
+      FieldName = 'Detalle'
+    end
+  end
+  object DataSDetalle: TDataSource
+    DataSet = Detalle
+    Left = 280
+    Top = 272
+  end
+  object Detalle: TClientDataSet
+    Active = True
+    Aggregates = <>
+    DataSetField = MaestroDetalle
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'cod'
+        ParamType = ptInput
+        Value = 0
+      end>
+    Left = 160
+    Top = 264
+    object Detalleidpedido: TIntegerField
+      FieldName = 'idpedido'
+      Required = True
+    end
+    object Detallecliente: TIntegerField
+      FieldName = 'cliente'
+      Required = True
+    end
+    object Detalledetalle: TStringField
+      FieldName = 'detalle'
+      Required = True
+      Size = 50
+    end
+    object Detallevalor: TFloatField
+      FieldName = 'valor'
+      Required = True
+    end
+  end
+end

@@ -1,0 +1,14 @@
+program PDataSnap;
+
+uses
+  Forms,
+  U_ServerDataSnap in 'U_ServerDataSnap.pas' {F_DataSnapServer};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TF_DataSnapServer, F_DataSnapServer);
+  Application.Run;
+end.

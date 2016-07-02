@@ -1,0 +1,27 @@
+unit U_ServerDataSnap;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DSCommonServer, DSServer, DSTCPServerTransport;
+
+type
+  TF_DataSnapServer = class(TForm)
+    DSTCPServerTransport1: TDSTCPServerTransport;
+    DSServer1: TDSServer;
+    DSServerClass1: TDSServerClass;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_DataSnapServer: TF_DataSnapServer;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,53 @@
+object DSServerModule1: TDSServerModule1
+  OldCreateOrder = False
+  Height = 307
+  Width = 598
+  object SQLConnection1: TSQLConnection
+    DriverName = 'MySQL'
+    GetDriverFunc = 'getSQLDriverMYSQL'
+    LibraryName = 'dbxmys.dll'
+    LoginPrompt = False
+    Params.Strings = (
+      'HostName=localhost'
+      'Database=bd'
+      'User_Name=root'
+      'Password=1234')
+    VendorLib = 'libmysql.dll'
+    Connected = True
+    Left = 56
+    Top = 40
+  end
+  object SQLQuery1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT * '
+      'FROM CLIENTES ')
+    SQLConnection = SQLConnection1
+    Left = 56
+    Top = 104
+    object SQLQuery1codigo: TIntegerField
+      Tag = 5
+      FieldName = 'codigo'
+    end
+    object SQLQuery1nombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 50
+    end
+    object SQLQuery1cedula: TStringField
+      FieldName = 'cedula'
+      Required = True
+    end
+    object SQLQuery1direccion: TStringField
+      FieldName = 'direccion'
+      Required = True
+      Size = 50
+    end
+  end
+  object DataSetProvider1: TDataSetProvider
+    DataSet = SQLQuery1
+    Left = 144
+    Top = 104
+  end
+end

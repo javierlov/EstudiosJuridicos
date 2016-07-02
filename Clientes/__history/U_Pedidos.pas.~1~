@@ -1,0 +1,24 @@
+unit U_Pedidos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TF_Pedidos = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_Pedidos: TF_Pedidos;
+
+implementation
+
+{$R *.dfm}
+
+end.

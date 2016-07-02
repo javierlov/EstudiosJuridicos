@@ -1,0 +1,78 @@
+unit U_ServerModulo;
+
+interface
+
+uses
+  SysUtils, Classes, DSServer, WideStrings, DBXMySql, DB, SqlExpr, FMTBcd,
+  Provider;
+
+type
+  TDSServerModule1 = class(TDSServerModule)
+    SQLConnection1: TSQLConnection;
+    SQLQuery1: TSQLQuery;
+    DataSetProvider1: TDataSetProvider;
+    SQLQuery1codigo: TIntegerField;
+    SQLQuery1nombre: TStringField;
+    SQLQuery1cedula: TStringField;
+    SQLQuery1direccion: TStringField;
+    Maestro: TSQLQuery;
+    Proveedor: TDataSetProvider;
+    Detalle: TSQLQuery;
+    Maestrocodigo: TIntegerField;
+    Maestronombre: TStringField;
+    Maestrocedula: TStringField;
+    Maestrodireccion: TStringField;
+    Detalleidpedido: TIntegerField;
+    Detallecliente: TIntegerField;
+    Detalledetalle: TStringField;
+    Detallevalor: TFloatField;
+    DataSMaestro: TDataSource;
+  private
+    { Private declarations }
+    Procedure DataSP_BeforeAfterUpdate(Sender: TObject; SDS: TDataSet; DDS: TCustomClientDataSet; UKind: TUpdateKind; Momento: Boolean);
+
+  public
+    { Public declarations }
+  end;
+
+var
+  DSServerModule1: TDSServerModule1;
+
+implementation
+
+{$R *.dfm}
+
+Procedure TDSServerModule1.DataSP_BeforeAfterUpdate(Sender: TObject; SDS: TDataSet; DDS: TCustomClientDataSet; UKind: TUpdateKind; Momento: Boolean);
+ var
+  i: integer;
+ Begin
+  if UKind = ukInsert then
+    begin
+        if Momento then begin
+          Identidad.Open;
+          IDDetalle :=Identidad.Fields[0].AsInteger;
+          Identidad.close
+         end;
+        for i := 0 to SDS.FieldCount -1 do
+          begin
+           if SDS.Fields[i].Tag = 5 then
+             begin
+               if Momento then begin
+                 DDS.FieldByName(SDS.Fields[i].FieldName).ReadOnly := false;
+                 DDS.FieldByName(SDS.Fields[i].FieldName).NewValue := IDDetalle;
+                 if SDS.Tag = 5 then
+                  IDMaestro                                        := IDDetalle
+                 end
+               else
+                 DDS.FieldByName(SDS.Fields[i].FieldName).NewValue := Unassigned
+             end
+            else if (SDS.Fields[i].Tag = 6) And (Not Momento) then begin
+               if DDS.FieldByName(SDS.Fields[i].FieldName).NewValue < 0 then
+                 DDS.FieldByName(SDS.Fields[i].FieldName).NewValue := IDMaestro
+            end else if (SDS.Fields[i].Tag = 7) And (Not Momento) then
+              DDS.FieldByName(SDS.Fields[i].FieldName).NewValue := Unassigned
+          end
+    end
+ End;
+
+end.

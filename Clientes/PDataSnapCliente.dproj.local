@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/06/08 15:54:01.030.dfm,C:\DataSnap\Clientes\U_ModuloCliente.dfm=C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit3.dfm</Transaction>
+    <Transaction>2012/06/08 15:54:01.030.pas,C:\DataSnap\Clientes\U_ModuloCliente.pas=C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2012/06/08 15:54:17.587.pas,C:\DataSnap\Clientes\U_FClientes.pas=C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2012/06/08 15:54:17.587.dfm,C:\DataSnap\Clientes\U_FClientes.dfm=C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2012/06/08 15:54:27.819.dproj,C:\DataSnap\Clientes\PDataSnap.dproj=C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2012/06/08 16:00:45.258.pas,C:\DataSnap\Clientes\U_DataSnapConexion.pas=C:\DataSnap\Clientes\Unit1.pas</Transaction>
+    <Transaction>2012/06/08 16:11:58.157.pas,C:\DataSnap\Clientes\U_Clientes.pas=C:\DataSnap\Clientes\Unit1.pas</Transaction>
+    <Transaction>2012/06/08 16:11:58.157.dfm,C:\DataSnap\Clientes\U_Clientes.dfm=C:\DataSnap\Clientes\Unit1.dfm</Transaction>
+    <Transaction>2012/06/08 16:13:42.589.pas,C:\DataSnap\Clientes\U_ModuloCliente.pas=</Transaction>
+    <Transaction>2012/06/08 16:13:42.589.dfm,C:\DataSnap\Clientes\U_ModuloCliente.dfm=</Transaction>
+    <Transaction>2012/06/09 10:53:38.975.pas,C:\DataSnap\Clientes\U_Pedidos.pas=C:\DataSnap\Clientes\Unit1.pas</Transaction>
+    <Transaction>2012/06/09 10:53:38.991.dfm,C:\DataSnap\Clientes\U_Pedidos.dfm=C:\DataSnap\Clientes\Unit1.dfm</Transaction>
+    <Transaction>2012/06/12 15:12:14.388.pas,C:\DataSnap\Clientes\U_Pedidos.pas=</Transaction>
+    <Transaction>2012/06/12 15:12:14.388.dfm,C:\DataSnap\Clientes\U_Pedidos.dfm=</Transaction>
+    <Transaction>2014/02/05 10:59:35.000.343,G:\MisArchivos\MisDocumentos\Delphi\SkyDrive-2014-02-05\DataSnap\Clientes\PDataSnapCliente.dproj=G:\MisArchivos\MisDocumentos\Delphi\SkyDrive-2014-02-05\DataSnap\Clientes\PDataSnap.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

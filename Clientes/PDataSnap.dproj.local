@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/06/08 15:54:01.030.pas,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit3.pas=C:\DataSnap\Clientes\U_ModuloCliente.pas</Transaction>
+    <Transaction>2012/06/08 15:54:01.030.dfm,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit3.dfm=C:\DataSnap\Clientes\U_ModuloCliente.dfm</Transaction>
+    <Transaction>2012/06/08 15:54:17.587.pas,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit2.pas=C:\DataSnap\Clientes\U_FClientes.pas</Transaction>
+    <Transaction>2012/06/08 15:54:17.587.dfm,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit2.dfm=C:\DataSnap\Clientes\U_FClientes.dfm</Transaction>
+    <Transaction>2012/06/08 15:54:27.819.dproj,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Project2.dproj=C:\DataSnap\Clientes\PDataSnap.dproj</Transaction>
+    <Transaction>2012/06/08 16:00:45.258.pas,C:\DataSnap\Clientes\Unit1.pas=C:\DataSnap\Clientes\U_DataSnapConexion.pas</Transaction>
+    <Transaction>2012/06/08 16:11:58.157.pas,C:\DataSnap\Clientes\Unit1.pas=C:\DataSnap\Clientes\U_Clientes.pas</Transaction>
+    <Transaction>2012/06/08 16:11:58.157.dfm,C:\DataSnap\Clientes\Unit1.dfm=C:\DataSnap\Clientes\U_Clientes.dfm</Transaction>
+    <Transaction>2012/06/08 16:13:42.589.pas,C:\DataSnap\Clientes\U_ModuloCliente.pas=</Transaction>
+    <Transaction>2012/06/08 16:13:42.589.dfm,C:\DataSnap\Clientes\U_ModuloCliente.dfm=</Transaction>
+    <Transaction>2012/06/09 10:53:38.975.pas,C:\DataSnap\Clientes\Unit1.pas=C:\DataSnap\Clientes\U_Pedidos.pas</Transaction>
+    <Transaction>2012/06/09 10:53:38.991.dfm,C:\DataSnap\Clientes\Unit1.dfm=C:\DataSnap\Clientes\U_Pedidos.dfm</Transaction>
+    <Transaction>2012/06/12 15:12:14.388.pas,C:\DataSnap\Clientes\U_Pedidos.pas=</Transaction>
+    <Transaction>2012/06/12 15:12:14.388.dfm,C:\DataSnap\Clientes\U_Pedidos.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,19 @@
+program PDataSnap;
+
+uses
+  Forms,
+  U_FClientes in 'U_FClientes.pas' {F_Principal},
+  U_ModuloCliente in 'U_ModuloCliente.pas' {DSServerModule3: TDSServerModule},
+  U_DataSnapConexion in 'U_DataSnapConexion.pas',
+  U_Clientes in 'U_Clientes.pas' {F_Clientes};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TF_Principal, F_Principal);
+  Application.CreateForm(TDSServerModule3, DSServerModule3);
+  Application.CreateForm(TF_Clientes, F_Clientes);
+  Application.Run;
+end.

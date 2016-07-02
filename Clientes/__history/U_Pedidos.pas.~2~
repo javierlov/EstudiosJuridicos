@@ -1,0 +1,27 @@
+unit U_Pedidos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids;
+
+type
+  TF_Pedidos = class(TForm)
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_Pedidos: TF_Pedidos;
+
+implementation
+
+uses U_ModuloCliente;
+
+{$R *.dfm}
+
+end.

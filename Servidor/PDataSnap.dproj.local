@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/06/08 15:37:54.249.pas,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit2.pas=C:\DataSnap\Servidor\U_ServerDataSnap.pas</Transaction>
+    <Transaction>2012/06/08 15:37:54.249.dfm,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Unit2.dfm=C:\DataSnap\Servidor\U_ServerDataSnap.dfm</Transaction>
+    <Transaction>2012/06/08 15:38:02.667.dproj,C:\Users\sistemasdllo2\Documents\RAD Studio\Projects\Project2.dproj=C:\DataSnap\Servidor\PDataSnap.dproj</Transaction>
+    <Transaction>2012/06/08 15:44:58.355.pas,C:\DataSnap\Servidor\Unit1.pas=C:\DataSnap\Servidor\U_ServerModulo.pas</Transaction>
+    <Transaction>2012/06/08 15:44:58.355.dfm,C:\DataSnap\Servidor\Unit1.dfm=C:\DataSnap\Servidor\U_ServerModulo.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

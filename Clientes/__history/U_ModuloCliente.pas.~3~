@@ -1,0 +1,32 @@
+unit U_ModuloCliente;
+
+interface
+
+uses
+  SysUtils, Classes, DSServer, WideStrings, DbxDatasnap, DB, DBClient, SqlExpr,
+  DSConnect;
+
+type
+  TDSServerModule3 = class(TDSServerModule)
+    DSProviderConnection1: TDSProviderConnection;
+    SQLConnection1: TSQLConnection;
+    Clientes: TClientDataSet;
+    Clientescodigo: TIntegerField;
+    Clientesnombre: TStringField;
+    Clientescedula: TStringField;
+    Clientesdireccion: TStringField;
+    DTClientes: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DSServerModule3: TDSServerModule3;
+
+implementation
+
+{$R *.dfm}
+
+end.

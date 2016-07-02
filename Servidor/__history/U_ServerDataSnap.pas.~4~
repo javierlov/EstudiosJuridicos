@@ -1,0 +1,37 @@
+unit U_ServerDataSnap;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DSCommonServer, DSServer, DSTCPServerTransport;
+
+type
+  TF_DataSnapServer = class(TForm)
+    DSTCPServerTransport1: TDSTCPServerTransport;
+    DSServer1: TDSServer;
+    DSServerClass1: TDSServerClass;
+    procedure DSServerClass1GetClass(DSServerClass: TDSServerClass;
+      var PersistentClass: TPersistentClass);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_DataSnapServer: TF_DataSnapServer;
+
+implementation
+
+uses U_ServerModulo;
+
+{$R *.dfm}
+
+procedure TF_DataSnapServer.DSServerClass1GetClass(
+  DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);
+begin
+ PersistentClass := TDSServerModule1
+end;
+
+end.

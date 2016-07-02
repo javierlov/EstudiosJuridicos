@@ -1,0 +1,137 @@
+object DSServerModule1: TDSServerModule1
+  OldCreateOrder = False
+  Height = 307
+  Width = 598
+  object SQLConnection1: TSQLConnection
+    DriverName = 'MySQL'
+    GetDriverFunc = 'getSQLDriverMYSQL'
+    LibraryName = 'dbxmys.dll'
+    LoginPrompt = False
+    Params.Strings = (
+      'HostName=localhost'
+      'Database=bd'
+      'User_Name=root'
+      'Password=1234')
+    VendorLib = 'libmysql.dll'
+    Connected = True
+    Left = 56
+    Top = 40
+  end
+  object SQLQuery1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT * '
+      'FROM CLIENTES ')
+    SQLConnection = SQLConnection1
+    Left = 56
+    Top = 104
+    object SQLQuery1codigo: TIntegerField
+      Tag = 5
+      FieldName = 'codigo'
+    end
+    object SQLQuery1nombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 50
+    end
+    object SQLQuery1cedula: TStringField
+      FieldName = 'cedula'
+      Required = True
+    end
+    object SQLQuery1direccion: TStringField
+      FieldName = 'direccion'
+      Required = True
+      Size = 50
+    end
+  end
+  object DataSetProvider1: TDataSetProvider
+    DataSet = SQLQuery1
+    Left = 144
+    Top = 104
+  end
+  object Maestro: TSQLQuery
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'cod'
+        ParamType = ptInput
+        Value = 1
+      end>
+    SQL.Strings = (
+      'SELECT * '
+      'FROM CLIENTES '
+      'WHERE codigo=:cod')
+    SQLConnection = SQLConnection1
+    Left = 352
+    Top = 88
+    object Maestrocodigo: TIntegerField
+      FieldName = 'codigo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object Maestronombre: TStringField
+      FieldName = 'nombre'
+      Required = True
+      Size = 50
+    end
+    object Maestrocedula: TStringField
+      FieldName = 'cedula'
+      Required = True
+    end
+    object Maestrodireccion: TStringField
+      FieldName = 'direccion'
+      Required = True
+      Size = 50
+    end
+  end
+  object Proveedor: TDataSetProvider
+    DataSet = Maestro
+    Options = [poCascadeDeletes, poCascadeUpdates, poPropogateChanges, poUseQuoteChar]
+    UpdateMode = upWhereKeyOnly
+    Left = 464
+    Top = 88
+  end
+  object Detalle: TSQLQuery
+    DataSource = DataSMaestro
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'cod'
+        ParamType = ptInput
+        Value = 1
+      end>
+    SQL.Strings = (
+      'SELECT * '
+      'FROM PEDIDOS'
+      'WHERE cliente=:cod')
+    SQLConnection = SQLConnection1
+    Left = 352
+    Top = 160
+    object Detalleidpedido: TIntegerField
+      FieldName = 'idpedido'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object Detallecliente: TIntegerField
+      FieldName = 'cliente'
+      Required = True
+    end
+    object Detalledetalle: TStringField
+      FieldName = 'detalle'
+      Required = True
+      Size = 50
+    end
+    object Detallevalor: TFloatField
+      FieldName = 'valor'
+      Required = True
+    end
+  end
+  object DataSMaestro: TDataSource
+    DataSet = Maestro
+    Left = 488
+    Top = 160
+  end
+end

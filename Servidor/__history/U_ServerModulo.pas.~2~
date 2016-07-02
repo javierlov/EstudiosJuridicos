@@ -1,0 +1,24 @@
+unit U_ServerModulo;
+
+interface
+
+uses
+  SysUtils, Classes, DSServer, WideStrings, DBXMySql, DB, SqlExpr;
+
+type
+  TDSServerModule1 = class(TDSServerModule)
+    SQLConnection1: TSQLConnection;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DSServerModule1: TDSServerModule1;
+
+implementation
+
+{$R *.dfm}
+
+end.

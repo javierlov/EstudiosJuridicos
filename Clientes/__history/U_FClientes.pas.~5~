@@ -1,0 +1,31 @@
+unit U_FClientes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, WideStrings, DbxDatasnap, DB, SqlExpr, DBClient, DSConnect;
+
+type
+  TForm2 = class(TForm)
+    SQLConnection1: TSQLConnection;
+    ClientDataSet1: TClientDataSet;
+    DSProviderConnection1: TDSProviderConnection;
+    ClientDataSet1codigo: TIntegerField;
+    ClientDataSet1nombre: TStringField;
+    ClientDataSet1cedula: TStringField;
+    ClientDataSet1direccion: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+end.

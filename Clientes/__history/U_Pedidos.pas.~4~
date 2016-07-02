@@ -1,0 +1,42 @@
+unit U_Pedidos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, StdCtrls;
+
+type
+  TF_Pedidos = class(TForm)
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    CodigoCliente: TEdit;
+    Label1: TLabel;
+    Buscar: TButton;
+    procedure BuscarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  F_Pedidos: TF_Pedidos;
+
+implementation
+
+uses U_ModuloCliente;
+
+{$R *.dfm}
+
+procedure TF_Pedidos.BuscarClick(Sender: TObject);
+begin
+ With Modulo.Maestro Do
+  Begin
+   Close;
+   Fields[0].Value := CodigoCliente.Text;
+   Open
+  End;
+end;
+
+end.

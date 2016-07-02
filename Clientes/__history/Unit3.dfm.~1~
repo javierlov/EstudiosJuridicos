@@ -1,0 +1,18 @@
+object DataModule3: TDataModule3
+  OldCreateOrder = False
+  Height = 299
+  Width = 629
+  object DataSnapConection: TSQLConnection
+    ConnectionName = 'DataSnapCONNECTION'
+    DriverName = 'Datasnap'
+    LoginPrompt = False
+    Left = 56
+    Top = 24
+  end
+  object DSProviderConnection1: TDSProviderConnection
+    ServerClassName = 'TFRemoteSever'
+    SQLConnection = DataSnapConection
+    Left = 184
+    Top = 24
+  end
+end

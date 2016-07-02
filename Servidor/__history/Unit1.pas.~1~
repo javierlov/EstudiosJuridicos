@@ -1,0 +1,31 @@
+unit Unit1;
+
+interface
+
+uses
+  SysUtils, Classes, WideStrings, DBXMySql, FMTBcd, DB, SqlExpr;
+
+type
+  TDataModule1 = class(TDataModule)
+    SQLConnection1: TSQLConnection;
+    SQLMonitor1: TSQLMonitor;
+    Identidad: TSQLQuery;
+    SQLQuery1: TSQLQuery;
+    SQLQuery1codigo: TIntegerField;
+    SQLQuery1nombre: TStringField;
+    SQLQuery1cedula: TStringField;
+    SQLQuery1direccion: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{$R *.dfm}
+
+end.

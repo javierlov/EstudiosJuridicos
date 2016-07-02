@@ -1,0 +1,24 @@
+object DataModule3: TDataModule3
+  OldCreateOrder = False
+  Height = 238
+  Width = 314
+  object TDSServerClass: TDSServerClass
+    Server = DSServer1
+    LifeCycle = 'Session'
+    Left = 48
+    Top = 96
+  end
+  object DSServer1: TDSServer
+    AutoStart = True
+    HideDSAdmin = False
+    Left = 40
+    Top = 24
+  end
+  object DSTCPServerTransport1: TDSTCPServerTransport
+    PoolSize = 0
+    Server = DSServer1
+    BufferKBSize = 32
+    Left = 184
+    Top = 24
+  end
+end

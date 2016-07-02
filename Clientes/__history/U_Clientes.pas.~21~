@@ -1,0 +1,151 @@
+unit U_Clientes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, StdCtrls, ToolWin, ComCtrls, Buttons;
+
+type
+  TF_Clientes = class(TForm)
+    Registros: TDBGrid;
+    Codigo: TEdit;
+    Cedula: TEdit;
+    Direccion: TEdit;
+    Nombre: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    ToolBar1: TToolBar;
+    Cerrar: TSpeedButton;
+    Eliminar: TSpeedButton;
+    Modificar: TSpeedButton;
+    Cancelar: TSpeedButton;
+    Grabar: TSpeedButton;
+    Nuevo: TSpeedButton;
+    procedure CerrarClick(Sender: TObject);
+    procedure RegistrosCellClick(Column: TColumn);
+    procedure RegistrosKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormCreate(Sender: TObject);
+    procedure NuevoClick(Sender: TObject);
+    procedure ModificarClick(Sender: TObject);
+    procedure CancelarClick(Sender: TObject);
+    procedure GrabarClick(Sender: TObject);
+  private
+    { Private declarations }
+    Procedure Mostrar;
+    Procedure Limpiar;
+    Procedure CambiarEstado;
+  public
+    { Public declarations }
+  end;
+
+var
+  F_Clientes: TF_Clientes;
+
+implementation
+
+uses U_ModuloCliente;
+
+{$R *.dfm}
+
+Var
+ SwOperacion: Boolean;
+
+Procedure TF_Clientes.Limpiar;
+ Begin
+  Codigo.Clear;
+  Cedula.Clear;
+  Nombre.Clear;
+  Direccion.Clear
+ End;
+
+Procedure TF_Clientes.CambiarEstado;
+ Begin
+  Nuevo.Enabled     := Not(Nuevo.Enabled);
+  Grabar.Enabled    := Not(Grabar.Enabled);
+  Cancelar.Enabled  := Not(Cancelar.Enabled);
+  Modificar.Enabled := Not(Modificar.Enabled);
+  Eliminar.Enabled  := Not(Eliminar.Enabled);
+  Cerrar.Enabled    := Not(Cerrar.Enabled);
+  Cedula.Enabled    := Not(Cedula.Enabled);
+  Nombre.Enabled    := Not(Nombre.Enabled);
+  Direccion.Enabled := Not(Direccion.Enabled);
+  Registros.Enabled := Not(Registros.Enabled)
+ End;
+
+procedure TF_Clientes.RegistrosCellClick(Column: TColumn);
+begin
+ Mostrar
+end;
+
+procedure TF_Clientes.RegistrosKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+ Mostrar
+end;
+
+procedure TF_Clientes.FormCreate(Sender: TObject);
+begin
+ Modulo.Clientes.Open;
+ Mostrar
+end;
+
+procedure TF_Clientes.GrabarClick(Sender: TObject);
+begin
+ if SwOperacion then
+  Begin
+   with Modulo.Clientes Do
+    Begin
+     Append;
+     //FieldByName('codigo').Value    := -1;
+     FieldByName('cedula').Value    := Cedula.Text;
+     FieldByName('nombre').Value    := Nombre.Text;
+     FieldByName('direccion').Value := Direccion.Text;
+     Post;
+     ApplyUpdates(0)
+    End
+  End;
+ CancelarClick(Sender)
+end;
+
+procedure TF_Clientes.ModificarClick(Sender: TObject);
+begin
+ SwOperacion := False;
+ CambiarEstado;
+ Cedula.SetFocus
+end;
+
+Procedure TF_Clientes.Mostrar;
+ Begin
+  With Modulo.Clientes Do
+   Begin
+     Codigo.Text    := FieldByName('codigo').Value;
+     Cedula.Text    := FieldByName('cedula').Value;
+     Nombre.Text    := FieldByName('nombre').Value;
+     Direccion.Text := FieldByName('direccion').Value
+   End;
+ End;
+
+procedure TF_Clientes.NuevoClick(Sender: TObject);
+begin
+ SwOperacion := True;
+ CambiarEstado;
+ Limpiar;
+ Cedula.SetFocus
+end;
+
+procedure TF_Clientes.CancelarClick(Sender: TObject);
+begin
+ Modulo.Clientes.Refresh;
+ CambiarEstado;
+ Mostrar
+end;
+
+procedure TF_Clientes.CerrarClick(Sender: TObject);
+begin
+ Close
+end;
+
+end.

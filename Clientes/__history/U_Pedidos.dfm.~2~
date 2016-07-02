@@ -1,0 +1,53 @@
+object F_Pedidos: TF_Pedidos
+  Left = 0
+  Top = 0
+  Caption = 'Pedidos'
+  ClientHeight = 408
+  ClientWidth = 829
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 32
+    Top = 32
+    Width = 681
+    Height = 121
+    DataSource = Modulo.DataSMaestro
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cedula'
+        Width = 82
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nombre'
+        Width = 220
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'direccion'
+        Width = 204
+        Visible = True
+      end>
+  end
+end
